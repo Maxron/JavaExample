@@ -1,9 +1,13 @@
 public class Example {
     public static void main(String[] args) {
-        LoginView loginView = new LoginView();
-        loginView.login("test@gmailcom", "passwd");
 
-        loginView.loginByPhoneNumber("+886910111222", "passwd");
+        LoginService emailLoginService = new EmailLoginService("test@gmail.com", "passwd");
+        LoginView loginView = new LoginView(emailLoginService);
+        loginView.startLogin();
+
+        LoginService phoneNumberLoginService = new PhoneNumberLoginService("+886910111222", "passwd");
+        loginView = new LoginView(phoneNumberLoginService);
+        loginView.startLogin();
     }
 
 }
