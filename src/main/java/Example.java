@@ -3,6 +3,7 @@ public class Example {
         LoginView loginView = new LoginView();
         loginView.login("test@gmailcom", "passwd");
 
+        loginView.loginByPhoneNumber("+886910111222", "passwd");
     }
 
 }
